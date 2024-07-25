@@ -28,7 +28,7 @@ void initHW()
     enablePort(PORTC);
     selectPinAnalogInput(C0_PIN);
 
-    initUart0();
+    initUart0();                                         // Enable UART
     setUart0BaudRate(115200, 40e6);
     _delay_cycles(3);
 
@@ -41,5 +41,12 @@ void initHW()
 int main(void)
 {
     initHW();
-    while(true);
+    char data;
+    while(true)
+    {
+        if(isCommand(&data, "ON", 0))
+        {
+            
+        }
+    }
 }
